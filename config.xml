@@ -28,16 +28,21 @@
         <icon density="xxxhdpi" src="res/icon/android/icon-192x192.png" />
     </platform>
     <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-        <icon density="ldpi" src="res/icon/android/icon-72x72.png" />
-        <icon density="mdpi" src="res/icon/android/icon-96x96.png" />
-        <icon density="hdpi" src="res/icon/android/icon-128x128.png" />
-        <icon density="xhdpi" src="res/icon/android/icon-144x144.png" />
-        <icon density="xxhdpi" src="res/icon/android/icon-152x152.png" />
-        <icon density="xxxhdpi" src="res/icon/android/icon-192x192.png" />
+        <config-file parent="NSAppTransportSecurity" target="*-Info.plist">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true />
+            </dict>
+        </config-file>
+        <icon density="xxxhdpi" height="20" src="res/icon/ios/icon-192x192.png" width="20" />
+        <icon density="xxxhdpi" height="29" src="res/icon/ios/icon-192x192.png" width="29" />
+        <icon density="xxxhdpi" height="40" src="res/icon/ios/icon-192x192.png" width="40" />
+        <icon density="xxxhdpi" height="57" src="res/icon/ios/icon-192x192.png" width="57" />
+        <icon density="ldpi" height="72" src="res/icon/ios/icon-72x72.png" width="72" />
     </platform>
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
-    <engine name="android" spec="^7.0.0" />
     <plugin name="cordova-plugin-ios-camera-permissions" spec="^1.2.0" />
+    <plugin name="cordova-plugin-transport-security" spec="^0.1.2" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>
